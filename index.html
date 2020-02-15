@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            height: 100%;
+            background-color: #666;
+            color: #fff;
+            font-family: Helvetica;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .calculator {
+            width: 300px;
+            height: 500px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1em 1fr 1fr 1fr;
+        }
+        
+        .display {
+            font-size: 4em;
+            font-weight: 100;
+            text-align: right;
+            line-height: 100px;
+            padding-top: 0.25em;
+            padding-bottom: 0.25em;
+            background-color: #444;
+        }
+        
+        button {
+            border: 0;
+            margin: 1px;
+            font-size: 2em;
+            font-weight: 100;
+            border-radius: 0.25em;
+            background-color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="display">
+
+        </div>
+
+        <button style="background-color: #888;">C</button>
+        <button style="background-color: #888;">+/-</button>
+        <button style="background-color: #888;">%</button>
+        <button style="background-color: #f90;">/</button>
+        <button style="background-color: #f90;">X</button>
+        <button style="background-color: #f90;">-</button>
+        <button style="background-color: #f90;">+</button>
+        <button style="background-color: #f90;">=</button>
+        <button>9</button>
+        <button>8</button>
+        <button>7</button>
+        <button>6</button>
+        <button>5</button>
+        <button>4</button>
+        <button>3</button>
+        <button>2</button>
+        <button>1</button>
+        <button>0</button>
+        <button>.</button>
+
+    </div>
+
+</body>
+
+</html>

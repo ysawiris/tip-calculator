@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+
+</head>
+
+<body>
+    <main class="main">
+        <label>
+            Bill Amount
+            <input type="number" id="input-bill" value="10">
+        </label>
+
+        <label>
+            Tip Percentage
+            <input type="number" id="input-tip" value="15">
+        </label>
+
+        <label>
+            Number of People 
+            <input type="number" id="input-people" value="1">
+        </label>
+
+        <div id="display-tip"></div>
+        <div id="display-total"></div>
+        <div id="display-people"></div>
+    </main>
+
+    <script>
+        // Define vairables for each of the elements. 
+        // You'll be creating references to DOM elements and storing them in variables in this step. 
+        // You should have a naming convention
+
+        const inputBill = document.getElementById('input-bill')
+        const inputTip = document.getElementById('input-tip')
+        const inputPeople = document.getElementById('input-people')
+
+        const displayTotal = document.getElementById('display-total')
+        const displayTip = document.getElementById('display-tip')
+        const displayPeople = document.getElementById('display-people')
+
+        // Add listeners to each of the input fields. 
+        // These listeners should listen for the 'change' event. 
+        // A change event occurs when the value of an input changes. 
+        // So as a user enters text or numbers as each new character is entered the handler for this event is executed.
+
+        inputBill.addEventListener('change', function(e) {
+            console.log(inputBill.value)
+            calculate()
+
+
+        })
+
+        inputTip.addEventListener('change', function(e) {
+            console.log(inputTip.value)
+            calculate()
+
+        })
+
+        inputPeople.addEventListener('change', function(e) {
+            console.log(inputPeople.value)
+            calculate()
+        })
+
+        function calculate() {
+            const percent = parseFloat(inputTip.value)
+            const bill = parseFloat(inputBill.value)
+            const people = parseInt(inputPeople.value)
+
+            const tip = bill * percent / 100
+            const total = bill + tip
+            const perPerson = total / people
+
+            console.log(total.toFixed(2))
+            console.log(total)
+
+
+            if (!isNaN(tip)) {
+                displayTip.innerHTML = 'Tip Amount: $' + tip.toFixed(2)
+            }
+            if (!isNaN(total)) {
+                displayTotal.innerHTML = 'Total Amount: $' + total.toFixed(2)
+                displayPeople.innerHTML = 'Per Person: $' + perPerson.toFixed(2)
+            }
+        }
+    </script>
+
+</body>
+
+</html>
